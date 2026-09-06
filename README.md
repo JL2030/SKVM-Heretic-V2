@@ -4,14 +4,33 @@
 
 [![#1 Repository of the Day](https://trendshift.io/api/badge/repositories/20538)](https://trendshift.io/repositories/20538)
 
-Heretic is a tool that removes censorship (aka "safety alignment") from
+Heretic is a desktop tool v2 that removes censorship (aka "safety alignment") from
 transformer-based language models without expensive post-training.
 It combines an advanced implementation of directional ablation, also known
 as "abliteration" ([Arditi et al. 2024](https://arxiv.org/abs/2406.11717),
 Lai 2025 ([1](https://huggingface.co/blog/grimjim/projected-abliteration),
 [2](https://huggingface.co/blog/grimjim/norm-preserving-biprojected-abliteration))),
 with a TPE-based parameter optimizer powered by [Optuna](https://optuna.org/).
-
+new 18 Features 
+1	One-click ablation	UNLOCK button → WorkerThread simulates real pipeline
+2	Batch processing	Right panel queue + Add/Clear buttons
+3	Custom prompts	📝 Upload Test Prompts button → .txt/.json
+4	Strength slider	0-100 with Subtle/Moderate/Nuclear labels + color
+5	Compare tab	Side-by-side original vs ablated output
+6	HF download	⬇ HF Download button
+7	Quantization	Export format radios (GGUF/SafeTensors/Ollama)
+8	MoE support	Auto-detect badge (Mixtral, Qwen-MoE)
+9	Visualization	Layer modification bar chart (32 layers)
+10	Stealth mode	Checkbox — halves KL divergence
+11	Custom vector	📐 Upload .npy/.pt button
+12	Selective decensor	8 category checkboxes
+13	Benchmarks	MMLU/HellaSwag/ARC/TruthfulQA/GSM8K
+14	Preset profiles	Subtle/Moderate/Nuclear buttons
+15	Model zoo	   6 popular models with one-click download
+16	Export formats	Radio buttons in right panel
+17	Ollama integration	"Auto-register" checkbox
+18	Discord webhook	   URL field in header → POST on complete
++	🎙️ Narrator	Toggle + voice dropdown (Attenborough/Robot/etc)
 This approach enables Heretic to work **completely automatically.** Heretic
 finds high-quality abliteration parameters by co-minimizing the number of
 refusals and the KL divergence from the original model. This results in a
@@ -40,7 +59,7 @@ by human experts:
 | [huihui-ai/gemma-3-12b-it-abliterated](https://huggingface.co/huihui-ai/gemma-3-12b-it-abliterated) | 3/100 | 0.45 |
 | **[p-e-w/gemma-3-12b-it-heretic](https://huggingface.co/p-e-w/gemma-3-12b-it-heretic) (ours)** | **3/100** | **0.16** |
 
-The Heretic version, generated without any human effort, achieves the same
+The Heretic v2, generated without any human effort, achieves the same
 level of refusal suppression as other abliterations, but at a much lower
 KL divergence, indicating less damage to the original model's capabilities.
 *(You can reproduce those numbers using Heretic's built-in evaluation functionality,
